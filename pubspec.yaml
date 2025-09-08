@@ -1,0 +1,57 @@
+name: Docdoc
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  go_router: ^16.1.0
+  flutter_svg: ^2.2.0
+  intl: ^0.20.2
+  shared_preferences: ^2.5.3
+  flutter_bloc: ^9.1.1
+  get_it: ^8.2.0
+  dio: ^5.9.0
+  flutter_secure_storage: ^9.2.4
+  dartz: ^0.10.1
+  equatable: ^2.0.7
+  cached_network_image: ^3.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/logo/
+    - assets/images/icons/
+    - assets/images/bank_image/
+    - assets/images/specially/
+
+
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+
