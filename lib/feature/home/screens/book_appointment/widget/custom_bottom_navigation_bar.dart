@@ -5,6 +5,7 @@ import 'package:Docdoc/core/utils/sizeConfig.dart';
 import 'package:Docdoc/core/widget/custom_button.dart';
 import 'package:Docdoc/feature/home/data/model/booking_arguments.dart';
 import 'package:Docdoc/feature/home/data/model/doctor/doctor.dart';
+import 'package:Docdoc/feature/home/logic/appointment/appointment_cubit.dart';
 import 'package:Docdoc/feature/home/logic/booking_doctor/booking_doctor_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -163,6 +164,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                         cubit: args!.cubit,
                       ),
                     );
+                    context.read<AppointmentCubit>().getAppointment();
                   } else if (state is BookingDoctorFailure) {
                     customSnackBar(context, state.message);
                   }

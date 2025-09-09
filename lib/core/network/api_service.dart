@@ -10,19 +10,14 @@ class ApiService {
     Map<String, dynamic>? query,
     Map<String, dynamic>? headers,
   }) async {
-    final fullUrl = '$_baseUrl$endPoint';
-    debugPrint(
-      'Request URL----------------------------------------------------------: $fullUrl',
-    );
+
 
     var response = await _dio.get(
       '$_baseUrl$endPoint',
       queryParameters: query,
       options: Options(headers: headers),
     );
-    debugPrint('✅ Response [${response.statusCode}] from $fullUrl');
-    debugPrint('🔸 Response headers: ${response.headers.map}');
-    debugPrint('🔸 Response body: ${response.data}');
+
     return response.data;
   }
 
@@ -32,24 +27,18 @@ class ApiService {
     required Map<String, dynamic> body,
     Map<String, dynamic>? headers,
   }) async {
-    final fullUrl = '$_baseUrl$endPoint';
-    debugPrint('🟠 [POST] $fullUrl');
-    debugPrint('🔹 Headers: $headers');
-    debugPrint('🔹 Body: $body');
-
     try {
       final response = await _dio.post(
-        fullUrl,
+        '$_baseUrl$endPoint',
         queryParameters: query,
         data: body,
         options: Options(headers: headers),
       );
 
-      debugPrint('✅ Response [${response.statusCode}]: ${response.data}');
       return Map<String, dynamic>.from(response.data);
     } on DioException catch (e) {
-      debugPrint('❌ API Error → ${e.response?.statusCode}');
-      debugPrint('❌ Response body → ${e.response?.data}');
+      debugPrint(' API Error → ${e.response?.statusCode}');
+      debugPrint(' Response body → ${e.response?.data}');
       rethrow;
     }
   }

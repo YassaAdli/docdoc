@@ -18,7 +18,7 @@ class CustomCompletedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: ColorManager.white,
-      elevation: 2,
+      elevation: 0.2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

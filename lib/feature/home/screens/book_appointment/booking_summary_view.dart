@@ -1,5 +1,6 @@
 import 'package:Docdoc/core/utils/service_locator.dart';
 import 'package:Docdoc/feature/home/data/model/booking_arguments.dart';
+import 'package:Docdoc/feature/home/logic/appointment/appointment_cubit.dart';
 import 'package:Docdoc/feature/home/logic/booking_doctor/booking_doctor_cubit.dart';
 import 'package:Docdoc/feature/home/screens/book_appointment/widget/booking_summary_body.dart';
 import 'package:Docdoc/feature/home/screens/book_appointment/widget/custom_bottom_navigation_bar.dart';
@@ -34,8 +35,12 @@ class BookingSummaryView extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: BlocProvider(
-          create: (BuildContext context) => getIt<BookingDoctorCubit>(),
+        bottomNavigationBar: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (BuildContext context) => getIt<BookingDoctorCubit>(),),
+            BlocProvider(create: (BuildContext context) => getIt<AppointmentCubit>(),),
+          ],
+
           child: CustomBottomNavigationBar(
             args: args,
             doctor: doctor,
