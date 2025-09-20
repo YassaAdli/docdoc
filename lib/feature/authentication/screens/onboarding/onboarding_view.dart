@@ -52,33 +52,33 @@ class OnboardingView extends StatelessWidget {
                                 end: Alignment.bottomCenter,
                                 colors: [
                                   Colors
-                                      .transparent, // بداية الصورة بدون أي تغيير
+                                      .transparent,
                                   Color.fromARGB(
                                     20,
                                     255,
                                     255,
                                     255,
-                                  ), // لمسة بيضاء خفيفة جدًا
+                                  ), 
                                   Color.fromARGB(
                                     80,
                                     255,
                                     255,
                                     255,
-                                  ), // زيادة البياض تدريجيًا
+                                  ), 
                                   Color.fromARGB(
                                     150,
                                     255,
                                     255,
                                     255,
-                                  ), // بياض شبه كامل
+                                  ), 
                                   Colors.white,
                                 ],
                                 stops: [
-                                  0.0, // شفاف
-                                  0.4, // بداية التدرج
-                                  0.65, // وسط التدرج
-                                  0.85, // شبه أبيض
-                                  1.0, // أبيض كامل
+                                  0.0, 
+                                  0.4,
+                                  0.65, 
+                                  0.85, 
+                                  1.0, 
                                 ],
                               ),
                             ),
@@ -127,7 +127,7 @@ class OnboardingView extends StatelessWidget {
                           child: CustomButton(
                             text: 'Get Started',
                             onPressed: () {
-                              GoRouter.of(context).push(AppRouter.loginView);
+                              GoRouter.of(context).go(AppRouter.loginView);
                             },
                           ),
                         ),
